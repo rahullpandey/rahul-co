@@ -1,33 +1,36 @@
 import "./globals.css";
-import ParallaxBackground from "./components/ParallaxBackground";
+import SiteThemeController from "./components/SiteThemeController";
 
 const description =
-  "Trusted manpower partner for premium hospitality. We support 5-star hotels with trained teams, project coverage, and on-time staffing.";
+  "Rahul Co. is a cinematic luxury travel showcase with immersive stays, curated destinations, and reference-matched opening animation.";
 
 export const metadata = {
-  title: "Rahul Engineering",
+  title: {
+    default: "Rahul Co.",
+    template: "%s | Rahul Co."
+  },
   description,
-  metadataBase: new URL("https://www.rahulengineerings.com"),
+  metadataBase: new URL("https://effervescent-gingersnap-dfc9b4.netlify.app"),
   openGraph: {
-    title: "Rahul Engineering",
+    title: "Rahul Co.",
     description,
-    url: "https://www.rahulengineerings.com",
-    siteName: "Rahul Engineering",
+    url: "https://effervescent-gingersnap-dfc9b4.netlify.app",
+    siteName: "Rahul Co.",
     type: "website",
     images: [
       {
-        url: "https://www.rahulengineerings.com/og.jpg?v=10",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Rahul Engineering"
+        alt: "Rahul Co."
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rahul Engineering",
+    title: "Rahul Co.",
     description,
-    images: ["https://www.rahulengineerings.com/og.jpg?v=10"]
+    images: ["/opengraph-image"]
   }
 };
 
@@ -35,7 +38,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ParallaxBackground />
+        <SiteThemeController />
         {children}
       </body>
     </html>

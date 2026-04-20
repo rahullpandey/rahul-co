@@ -14,8 +14,8 @@ export default function OpenGraphImage() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #f7f3ed 0%, #efe4d8 50%, #f7f3ed 100%)",
-          fontFamily: "Times New Roman"
+          background: "radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 35%), linear-gradient(160deg, #020202 0%, #0c0c0c 55%, #131313 100%)",
+          fontFamily: "Georgia"
         }}
       >
         <div
@@ -23,9 +23,9 @@ export default function OpenGraphImage() {
             width: "92%",
             height: "82%",
             borderRadius: "32px",
-            border: "1px solid rgba(200, 160, 110, 0.45)",
-            background: "rgba(255,255,255,0.72)",
-            boxShadow: "0 30px 60px rgba(27, 42, 65, 0.18)",
+            border: "1px solid rgba(255, 255, 255, 0.12)",
+            background: "linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)",
+            boxShadow: "0 30px 80px rgba(0, 0, 0, 0.35)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -37,27 +37,26 @@ export default function OpenGraphImage() {
               style={{
                 width: "120px",
                 height: "120px",
-                borderRadius: "16px",
-                border: "2px solid rgba(43, 43, 43, 0.25)",
-                background: "#f7f3ed",
+                borderRadius: "999px",
+                border: "2px solid rgba(255, 255, 255, 0.12)",
+                background: "#ffffff",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 fontSize: "64px",
                 fontWeight: 700,
-                color: "#2b2b2b",
-                position: "relative"
+                color: "#111111",
+                fontStyle: "italic"
               }}
             >
-              <span style={{ position: "absolute", left: "26px", top: "18px" }}>R</span>
-              <span style={{ position: "absolute", right: "22px", bottom: "18px", color: "#a8793e" }}>E</span>
+              R
             </div>
             <div>
-              <div style={{ fontSize: "64px", fontWeight: 700, letterSpacing: "0.04em" }}>
-                Rahul Engineering
+              <div style={{ fontSize: "64px", fontWeight: 700, letterSpacing: "0.14em", color: "#ffffff" }}>
+                RAHUL CO.
               </div>
-              <div style={{ marginTop: "12px", fontSize: "28px", color: "#6c6a66", letterSpacing: "0.1em" }}>
-                Hospitality Workforce & Project Management
+              <div style={{ marginTop: "12px", fontSize: "28px", color: "rgba(255,255,255,0.62)", letterSpacing: "0.18em" }}>
+                CURATED LUXURY JOURNEYS
               </div>
             </div>
           </div>
@@ -66,11 +65,11 @@ export default function OpenGraphImage() {
             style={{
               marginTop: "36px",
               fontSize: "28px",
-              color: "#3b2f24",
+              color: "rgba(255,255,255,0.82)",
               maxWidth: "90%"
             }}
           >
-            Trusted manpower partner for premium hotels. 24/7 coverage, verified teams, and on-time staffing.
+            Explore cinematic destinations, private stays, and concierge-led experiences with the same premium feel as the reference site.
           </div>
         </div>
       </div>
