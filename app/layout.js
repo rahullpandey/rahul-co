@@ -10,11 +10,11 @@ export const metadata = {
     template: "%s | Rahul Co."
   },
   description,
-  metadataBase: new URL("https://effervescent-gingersnap-dfc9b4.netlify.app"),
+  metadataBase: new URL("https://rahul-co.vercel.app"),
   openGraph: {
     title: "Rahul Co.",
     description,
-    url: "https://effervescent-gingersnap-dfc9b4.netlify.app",
+    url: "https://rahul-co.vercel.app",
     siteName: "Rahul Co.",
     type: "website",
     images: [
@@ -32,6 +32,13 @@ export const metadata = {
     description,
     images: ["/opengraph-image"]
   }
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#050505"
 };
 
 export default function RootLayout({ children }) {

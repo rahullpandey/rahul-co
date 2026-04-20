@@ -7,7 +7,7 @@ export default function robots() {
         disallow: ["/admin", "/api"]
       }
     ],
-    sitemap: "https://effervescent-gingersnap-dfc9b4.netlify.app/sitemap.xml",
-    host: "https://effervescent-gingersnap-dfc9b4.netlify.app"
+    sitemap: "https://rahul-co.vercel.app/sitemap.xml",
+    host: "https://rahul-co.vercel.app"
   };
 }

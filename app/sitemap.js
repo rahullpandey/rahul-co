@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://effervescent-gingersnap-dfc9b4.netlify.app";
+  const baseUrl = "https://rahul-co.vercel.app";
   const routes = [
     "",
     "/about",

@@ -50,7 +50,8 @@ export default function FrameSequenceHero() {
 
     const viewportWidth = canvas.clientWidth;
     const viewportHeight = canvas.clientHeight;
-    const pixelRatio = window.devicePixelRatio || 1;
+    const isTouchViewport = window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, isTouchViewport ? 1.5 : 2);
 
     if (canvas.width !== viewportWidth * pixelRatio || canvas.height !== viewportHeight * pixelRatio) {
       canvas.width = viewportWidth * pixelRatio;

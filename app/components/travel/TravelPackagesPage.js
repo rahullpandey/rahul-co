@@ -1,11 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TRAVEL_PACKAGES } from "../../data/travelSite";
 import ReservationModal from "./ReservationModal";
 
 export default function TravelPackagesPage() {
   const [selectedPackage, setSelectedPackage] = useState(null);
+  const [isTouchMode, setIsTouchMode] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(hover: none), (pointer: coarse)");
+    const updateTouchMode = () => setIsTouchMode(mediaQuery.matches);
+
+    updateTouchMode();
+
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", updateTouchMode);
+      return () => {
+        mediaQuery.removeEventListener("change", updateTouchMode);
+      };
+    }
+
+    mediaQuery.addListener(updateTouchMode);
+
+    return () => {
+      mediaQuery.removeListener(updateTouchMode);
+    };
+  }, []);
+
+  const interactionHint = isTouchMode ? "Tap Reserve on Mobile" : "Double Click to Reserve";
+  const cardHint = isTouchMode ? "Tap Reserve" : "Double Click to Reserve";
 
   return (
     <>
@@ -18,7 +42,7 @@ export default function TravelPackagesPage() {
             <p>
               Explore our curated selection of global sanctuaries.
               <br />
-              <span>Double Click to Reserve</span>
+              <span>{interactionHint}</span>
             </p>
           </section>
 
@@ -27,7 +51,11 @@ export default function TravelPackagesPage() {
               <article
                 key={item.id}
                 className="travel-package-card"
-                onDoubleClick={() => setSelectedPackage(item)}
+                onDoubleClick={() => {
+                  if (!isTouchMode) {
+                    setSelectedPackage(item);
+                  }
+                }}
                 onKeyDown={(event) => {
                   if (event.key === "Enter" || event.key === " ") {
                     event.preventDefault();
@@ -47,9 +75,23 @@ export default function TravelPackagesPage() {
                     <strong>
                       {item.price} <small>/ Package</small>
                     </strong>
+                    <div className="travel-package-actions">
+                      <button
+                        className="travel-glass-button travel-package-reserve-button"
+                        type="button"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          setSelectedPackage(item);
+                        }}
+                      >
+                        Reserve
+                      </button>
+                    </div>
                   </div>
                 </div>
-                <div className="travel-package-callout">Double Click to Reserve</div>
+                <div className="travel-package-callout" data-label={cardHint} aria-hidden>
+                  {cardHint}
+                </div>
               </article>
             ))}
           </section>
